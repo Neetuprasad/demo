@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VueVue</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+ 
+  <!-- we can use double mustache syntax to pput variables in the dom i.r using {{}} -->
+  <!-- vue uses two way data binding -->
+  <!-- using a directive called v-model -->
+  <!-- v-if evaluates its expression to a boolean value as either true or false -->
+  <!-- we can chain directive using v-else-if -->
+  <!-- while using v-else in false condition it dont even render but when we use v-show , when condition is false 
+  it gets rendered but with display:none property -->
+  <!-- v-bind derivative is use to bind some html attribute to javascript  -->
+  <!-- v-text is used to put text in an element -->
+  <!-- we can use v-bind to dynamically add classes too , thr are two syntaxes , first is object syntax and second is array syntax-->
+  <!-- v-once directive is used so that its value gets rendered only once and not get updated later on  -->
+  <body>
+    <div id="vue-app">
+      <!-- <h1>{{name}}</h1>
+      <input v-model="name" />
+      <p v-text="name" > </p>
+      <div v-if="count === 1">Red</div>
+      <div v-else-if="count === 2">Green</div>
+      <div v-else>Blue</div> -->
+      
+      Sign Up 
+      <br>
+
+      <p v-once >{{email}}</p>
+      <p  >{{email}}</p>
+      <!-- <input v-model="email" :class="{red: email.length < 2}" :class ="[email.length > 2 ? 'green' : 'red']" > -->
+      <input v-model="email"  :class ="[email.length > 2 ? 'green' : 'red']" >
+     <br>
+
+     <button onclick="console.log(`signedUp`)" v-bind:disabled="email.length < 2">Submit</button> 
+     <!-- can be written as :disabled too   -->
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
